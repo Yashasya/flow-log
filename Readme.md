@@ -58,7 +58,7 @@ The output is generated as a CSV file (output.csv) containing:
 - lookup.csv: Lookup table file
 - protocol.csv: Protocol table file
 
-2. If the name of the files vary from the above name then you need to modify the
+2. If the name of the files vary from the above name then you need to modify the first three lines of the main function and add the path to the relevant files.
 3. Run the program: `python flow_log_parser.py`
 4. The output will be saved as output.csv in the same directory.
 
