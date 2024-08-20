@@ -12,7 +12,7 @@ Decimal,Keyword
 10,BBN-RCC-MON
 11,NVP-II
 12,PUP
-13,ARGUS (deprecated)
+13,ARGUS
 14,EMCON
 15,XNET
 16,CHAOS
@@ -52,7 +52,7 @@ Decimal,Keyword
 50,ESP
 51,AH
 52,I-NLSP
-53,SWIPE (deprecated)
+53,SWIPE
 54,NARP
 55,Min-IPv4
 56,TLSP
@@ -94,7 +94,7 @@ Decimal,Keyword
 92,MTP
 93,AX.25
 94,IPIP
-95,MICP (deprecated)
+95,MICP
 96,SCC-SP
 97,ETHERIP
 98,ENCAP
@@ -121,7 +121,7 @@ Decimal,Keyword
 119,SRP
 120,UTI
 121,SMP
-122,SM (deprecated)
+122,SM
 123,PTP
 124,ISIS over IPv4
 125,FIRE
