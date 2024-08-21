@@ -35,7 +35,7 @@ An example lookup table:
 - Matching is case-insensitive.
 - Logs with no matching tag in the lookup table are labeled as "Untagged."
 - Port/protocol mappings are unique in the lookup table.
-- The protocol is looked up using a protocol.csv file containing protocol mappings (e.g., 6 -> tcp).
+- Added one supplementary file i.e. protocol.csv which contains protocol mappings (e.g., 6 -> tcp). The file was downlaoded from [here](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)
 
 ### Input Files
 

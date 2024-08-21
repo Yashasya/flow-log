@@ -108,10 +108,10 @@ def write_output(tag_counts, port_protocol_counts, output_file):
             file.write(f"{port},{protocol},{count}\n")
 
 def main():
-    lookup_table_file = 'data/input/lookup.csv'  # Path to your lookup table CSV file
-    flow_log_file = 'data/input/yshah1.log'  # Path to your flow log file
-    prot_table_file = 'data/input/protocol.csv' # Path to your Protocol CSV File
-    output_file = 'data/output/output.csv'  # Path to the output file
+    lookup_table_file = 'lookup.csv'  # Path to your lookup table CSV file
+    flow_log_file = 'yshah1.log'  # Path to your flow log file
+    prot_table_file = 'protocol.csv' # Path to your Protocol CSV File
+    output_file = 'output.csv'  # Path to the output file
 
     # Parse lookup table, protocol table and flow logs
     lookup_table = parse_lookup_table(lookup_table_file)
