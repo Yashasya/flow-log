@@ -52,7 +52,7 @@ The output is generated as a CSV file (output.csv) containing:
 
 ### Instructions to Run
 
-1. Ensure the following input files are present in the same directory:
+1. Ensure the following input files are present in the data/input directory:
 
 - yshah.log: Flow log file
 - lookup.csv: Lookup table file
@@ -60,7 +60,7 @@ The output is generated as a CSV file (output.csv) containing:
 
 2. If the name of the files vary from the above name then you need to modify the first three lines of the main function and add the path to the relevant files.
 3. Run the program: `python flow_log_parser.py`
-4. The output will be saved as output.csv in the same directory.
+4. The output will be saved as output.csv in the data/output directory.
 
 ## Code Explanation
 
