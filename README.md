@@ -70,10 +70,10 @@ The output is generated as a CSV file (output.csv) containing:
 ### Functions
 
 - [parse_lookup_table(file_path)](https://github.com/Yashasya/flow-log/blob/main/parser.py#L8): Reads the lookup table and returns a dictionary mapping (dstport, protocol) to a tag.
-- [parse_protocol(file_path)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L31): Reads the protocol table and maps protocol numbers to names.
-- [parse_flow_log(file_path, prot_table)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L56): Reads the flow logs, extracting the relevant fields (dstport, protocol) and returns them for tagging.
-- [generate_tag_counts(flow_logs, lookup_table)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L86): Generates counts for tags and port/protocol combinations.
-- [write_output(tag_counts, port_protocol_counts, output_file)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L112): Writes the counts to the output file.
+- [parse_protocol(file_path)](https://github.com/Yashasya/flow-log/blob/main/parser.py#L31): Reads the protocol table and maps protocol numbers to names.
+- [parse_flow_log(file_path, prot_table)](https://github.com/Yashasya/flow-log/blob/main/parser.py#L56): Reads the flow logs, extracting the relevant fields (dstport, protocol) and returns them for tagging.
+- [generate_tag_counts(flow_logs, lookup_table)](https://github.com/Yashasya/flow-log/blob/main/parser.py#L86): Generates counts for tags and port/protocol combinations.
+- [write_output(tag_counts, port_protocol_counts, output_file)](https://github.com/Yashasya/flow-log/blob/main/parser.py#L112): Writes the counts to the output file.
 
 ### Tests
 
