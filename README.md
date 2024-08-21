@@ -10,15 +10,16 @@ The goal is to read and process flow log data, tag the logs based on predefined 
 
 Flow logs are assumed to be in the default format (version 2), as specified in the [AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html). An example flow log line:
 
+```
 2 123456789012 eni-0a1b2c3d 10.0.1.201 198.51.100.2 443 49153 6 25 20000 1620140761 1620140821 ACCEPT OK
-
+```
 ### Lookup Table Format
 
 The lookup table is a CSV file with the following columns:
 
-- dstport: The destination port number.
-- protocol: The protocol name (e.g., tcp, udp).
-- tag: The tag to apply when the dstport and protocol match.
+- `dstport`: The destination port number.
+- `protocol`: The protocol name (e.g., tcp, udp).
+- `tag`: The tag to apply when the dstport and protocol match.
 
 An example lookup table:
 
@@ -35,7 +36,7 @@ An example lookup table:
 - Matching is case-insensitive.
 - Logs with no matching tag in the lookup table are labeled as "Untagged."
 - Port/protocol mappings are unique in the lookup table.
-- Added one supplementary file i.e. protocol.csv which contains protocol mappings (e.g., 6 -> tcp). The file was downlaoded from [here](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)
+- Added one supplementary file i.e. [protocol.csv](./data/input/protocol.csv) which contains protocol mappings (e.g., 6 -> tcp). The file was downlaoded from [here](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)
 
 ### Input Files
 
@@ -68,13 +69,13 @@ The output is generated as a CSV file (output.csv) containing:
 
 ### Functions
 
-- parse_lookup_table(file_path): Reads the lookup table and returns a dictionary mapping (dstport, protocol) to a tag.
-- parse_protocol(file_path): Reads the protocol table and maps protocol numbers to names.
-- parse_flow_log(file_path, prot_table): Reads the flow logs, extracting the relevant fields (dstport, protocol) and returns them for tagging.
-- generate_tag_counts(flow_logs, lookup_table): Generates counts for tags and port/protocol combinations.
-- write_output(tag_counts, port_protocol_counts, output_file): Writes the counts to the output file.
+- [parse_lookup_table(file_path)](https://github.com/Yashasya/flow-log/blob/main/parser.py#L8): Reads the lookup table and returns a dictionary mapping (dstport, protocol) to a tag.
+- [parse_protocol(file_path)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L31): Reads the protocol table and maps protocol numbers to names.
+- [parse_flow_log(file_path, prot_table)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L56): Reads the flow logs, extracting the relevant fields (dstport, protocol) and returns them for tagging.
+- [generate_tag_counts(flow_logs, lookup_table)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L86): Generates counts for tags and port/protocol combinations.
+- [write_output(tag_counts, port_protocol_counts, output_file)](https://github.com/Yashasya/flow-log/blob/main/Parser.py#L112): Writes the counts to the output file.
 
 ### Tests
 
-- The Program was tested based on the sample VPC Log Data from one of my AWS Account.
+- The program was tested based on sample VPC log data from one of my AWS Accounts. In order to preserve confidentiality, this data hasn't been uploaded to the repo.
 - Test cases include scenarios with both matching and non-matching tags.
